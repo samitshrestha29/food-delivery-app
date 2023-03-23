@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 
+import '../utils/colors.dart';
+
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({super.key});
 
@@ -22,7 +24,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(children: [
-                    BigText(text: "Nepal"),
+                    BigText(
+                      text: "Nepal",
+                      color: AppColors.mainColor,
+                    ),
                     const Text('data'),
                   ]),
                   Center(
