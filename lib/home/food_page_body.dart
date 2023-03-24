@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/widgets/big_text.dart';
+import 'package:food_delivery/widgets/icon_and_text_widget.dart';
+import 'package:food_delivery/widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -28,7 +30,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         Container(
           height: 220,
-          margin: const EdgeInsets.only(left: 5, right: 5),
+          margin: const EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: index.isEven
@@ -42,9 +44,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-              height: 140,
-              width: 220,
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
+              height: 120,
+              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: Colors.white,
@@ -56,6 +57,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   right: 10,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: "Tasty Burger"),
                     const SizedBox(height: 10),
@@ -67,9 +69,33 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             (index) => const Icon(
                               Icons.star,
                               color: AppColors.mainColor,
+                              size: 15,
                             ),
                           ),
                         ),
+                        const SizedBox(width: 10),
+                        SmallText(text: "4.5"),
+                        const SizedBox(width: 10),
+                        SmallText(text: "1287"),
+                        const SizedBox(width: 10),
+                        SmallText(text: "comments")
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      children: const [
+                        IconAndTextWidget(
+                            icon: Icons.circle_sharp,
+                            text: "Normal",
+                            iconColor: AppColors.iconColor1),
+                        IconAndTextWidget(
+                            icon: Icons.location_on,
+                            text: "1.7km",
+                            iconColor: AppColors.mainColor),
+                        IconAndTextWidget(
+                            icon: Icons.access_time_rounded,
+                            text: "32min",
+                            iconColor: AppColors.iconColor2),
                       ],
                     )
                   ],
